@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FritzCamronExamPractice1</string>
+    <string name="AppTitle">Name Mangler</string>
+    <string name="button_text">Mangle!</string>
+</resources>
