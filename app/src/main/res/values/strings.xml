@@ -2,4 +2,6 @@
     <string name="app_name">FritzCamronExamPractice1</string>
     <string name="AppTitle">Name Mangler</string>
     <string name="button_text">Mangle!</string>
+    <string name="remangle_button_text">Re-mangle!</string>
+    <string name="reset_button_text">Reset</string>
 </resources>
