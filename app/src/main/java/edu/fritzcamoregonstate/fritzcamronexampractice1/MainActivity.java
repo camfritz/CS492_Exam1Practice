@@ -1,5 +1,6 @@
 package edu.fritzcamoregonstate.fritzcamronexampractice1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,7 +39,10 @@ public class MainActivity extends AppCompatActivity {
                 Random random = new Random();
                 int randomNumber = random.nextInt(4 + 1 - 0);
 
-                Toast.makeText(MainActivity.this, mFirstNameText.getText() + " " + lastNames[randomNumber], Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, mFirstNameText.getText() + " " + lastNames[randomNumber], Toast.LENGTH_SHORT).show();
+
+                Intent intent = MangleActivity.newIntent(MainActivity.this, lastNames[randomNumber], mFirstNameText.getText().toString());
+                startActivity(intent);
             }
         });
     }
