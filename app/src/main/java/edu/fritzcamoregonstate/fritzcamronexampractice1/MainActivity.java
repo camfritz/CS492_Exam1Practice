@@ -16,6 +16,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     private Button mMangleButton;
     private EditText mFirstNameText;
+    private int request_code_result = 0;
 
     private String[] lastNames = new String[] {
             "Simmons",
@@ -41,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
                 //Toast.makeText(MainActivity.this, mFirstNameText.getText() + " " + lastNames[randomNumber], Toast.LENGTH_SHORT).show();
 
-                Intent intent = MangleActivity.newIntent(MainActivity.this, lastNames[randomNumber], mFirstNameText.getText().toString());
-                startActivity(intent);
+                Intent intent = MangleActivity.newIntent(MainActivity.this, lastNames[randomNumber], mFirstNameText.getText().toString(), lastNames);
+                startActivityForResult(intent, request_code_result);
             }
         });
     }
