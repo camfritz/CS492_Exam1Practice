@@ -18,6 +18,7 @@ public class MangleActivity extends AppCompatActivity {
 
     private TextView mMangledNameView;
     private Button mMangleRepeatButton;
+    private Button mResetButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class MangleActivity extends AppCompatActivity {
 
         mMangledNameView = (TextView) findViewById(R.id.mangled_name);
         mMangleRepeatButton = (Button) findViewById(R.id.remangle_button);
+        mResetButton = (Button) findViewById(R.id.reset_button);
 
         mMangledNameView.setText(getIntent().getStringExtra(EXTRA_MANGLE_FIRST) + " " + getIntent().getStringExtra(EXTRA_MANGLE_CONCAT));
 
@@ -39,6 +41,15 @@ public class MangleActivity extends AppCompatActivity {
                 int randomNumber = random.nextInt(4 + 1 - 0);
 
                 mMangledNameView.setText(getIntent().getStringExtra(EXTRA_MANGLE_FIRST) + " " + getIntent().getStringArrayExtra(EXTRA_MANGLE_ARRAY)[randomNumber]);
+            }
+        });
+
+        //set listener for reset button
+        mResetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent resetIntent = new Intent(MangleActivity.this, MainActivity.class);
+                startActivity(resetIntent);
             }
         });
 
